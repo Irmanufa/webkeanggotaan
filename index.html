@@ -1,0 +1,289 @@
+<!doctype html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.5, user-scalable=yes"
+    />
+    <title>IRMANUFA PREMIUM · Sistem Informasi Anggota 2024-2026</title>
+
+    <!-- Font Awesome 6 (ikon keren) -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+
+    <!-- Google Fonts (tipografi premium) -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Poppins:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Animate.css (animasi) -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+    />
+
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <!-- Partikel latar belakang -->
+    <div class="particles" id="particles"></div>
+
+    <!-- Overlay gradient -->
+    <div class="gradient-overlay"></div>
+
+    <div class="container">
+      <!-- Floating Ornament -->
+      <div class="floating-ornament ornament-1"></div>
+      <div class="floating-ornament ornament-2"></div>
+      <div class="floating-ornament ornament-3"></div>
+
+      <!-- Main Card dengan efek glassmorphism -->
+      <div class="main-card animate__animated animate__fadeInUp">
+        <!-- Header Premium -->
+        <div class="premium-header">
+          <div class="header-pattern"></div>
+          <div class="header-content">
+            <div class="logo-wrapper">
+              <div class="logo-icon">
+                <i class="fas fa-mosque"></i>
+              </div>
+              <div class="logo-text">
+                <h1 class="glow-text">IRMANUFA</h1>
+                <p class="subtitle">Ikatan Remaja Masjid Jami Nurul Falah</p>
+              </div>
+            </div>
+            <div class="header-badge">
+              <span class="badge-premium">PREMIUM</span>
+              <span class="badge-year">2024-2026</span>
+            </div>
+          </div>
+          <div class="header-wave">
+            <svg viewBox="0 0 1200 120" preserveAspectRatio="none">
+              <path
+                d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V0H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z"
+                class="wave-fill"
+              ></path>
+            </svg>
+          </div>
+        </div>
+
+        <!-- Content Panel -->
+        <div class="content-panel">
+          <!-- Status Bar -->
+          <div class="status-bar">
+            <div class="status-item">
+              <i class="fas fa-users icon-glow"></i>
+              <span><strong>90</strong> Anggota</span>
+            </div>
+            <div class="status-item">
+              <i class="fas fa-user-check icon-glow"></i>
+              <span><strong>56</strong> Aktif</span>
+            </div>
+            <div class="status-item">
+              <i class="fas fa-user-clock icon-glow"></i>
+              <span><strong>34</strong> Pasif</span>
+            </div>
+          </div>
+
+          <!-- Search Section Premium -->
+          <div class="search-section">
+            <div class="search-label">
+              <i class="fas fa-search-location"></i>
+              <span>MASUKKAN NOMOR ANGGOTA</span>
+            </div>
+
+            <div class="search-box">
+              <div class="input-wrapper">
+                <i class="fas fa-id-card input-icon"></i>
+                <input
+                  type="text"
+                  id="memberCode"
+                  class="premium-input"
+                  placeholder="24.01.001"
+                  autocomplete="off"
+                  spellcheck="false"
+                />
+                <div class="input-border"></div>
+              </div>
+
+              <button class="premium-btn" id="searchBtn">
+                <span>Cari</span>
+                <i class="fas fa-arrow-right"></i>
+                <div class="btn-shine"></div>
+              </button>
+            </div>
+
+            <!-- Quick Access Chips -->
+            <div class="quick-access">
+              <span class="chip-label">Contoh:</span>
+              <div class="chip-group">
+                <div class="chip" data-code="24.01.001">Ketua</div>
+                <div class="chip" data-code="24.01.016">HUMAS</div>
+                <div class="chip" data-code="24.01.023">PSDM</div>
+                <div class="chip" data-code="24.01.057">Pasif</div>
+                <div class="chip" data-code="24.01.088">Aktif</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Result Area Premium -->
+          <div class="result-premium" id="resultArea">
+            <!-- Loading Animation -->
+            <div class="loading-animation" id="loadingAnimation">
+              <div class="loader"></div>
+              <p>Mencari data anggota...</p>
+            </div>
+
+            <!-- Result Card Utama -->
+            <div class="result-card-premium" id="resultCard">
+              <!-- Decorative Elements -->
+              <div class="card-glow"></div>
+              <div class="card-corner corner-tl"></div>
+              <div class="card-corner corner-tr"></div>
+              <div class="card-corner corner-bl"></div>
+              <div class="card-corner corner-br"></div>
+
+              <!-- Header Result -->
+              <div class="result-header-premium">
+                <div class="member-identity">
+                  <div class="member-avatar" id="memberAvatar">
+                    <i class="fas fa-user-circle"></i>
+                  </div>
+                  <div class="member-code-badge" id="memberCodeBadge">
+                    24.01.---
+                  </div>
+                </div>
+
+                <div class="status-badge-premium" id="statusBadge">
+                  <span class="status-dot"></span>
+                  <span class="status-text" id="statusText">Menunggu</span>
+                </div>
+              </div>
+
+              <!-- Body Result -->
+              <div class="result-body-premium" id="resultBody">
+                <!-- Nama dengan efek -->
+                <div class="member-name-wrapper">
+                  <i class="fas fa-quote-right quote-icon"></i>
+                  <h2 class="member-name" id="memberName">
+                    IRMANUFA ALL STARS
+                  </h2>
+                </div>
+
+                <!-- Divisi Card -->
+                <div class="divisi-card" id="divisiCard">
+                  <div class="divisi-icon">
+                    <i class="fas fa-sitemap"></i>
+                  </div>
+                  <div class="divisi-detail">
+                    <p class="divisi-label">DIVISI / JABATAN</p>
+                    <h3 class="divisi-value" id="divisiValue">-</h3>
+                  </div>
+                </div>
+
+                <!-- Predikat Card -->
+                <div class="predikat-card" id="predikatCard">
+                  <div class="predikat-row">
+                    <div class="predikat-item">
+                      <i class="fas fa-tag"></i>
+                      <span>Predikat:</span>
+                      <strong id="predikatValue">-</strong>
+                    </div>
+                    <div class="predikat-item">
+                      <i class="fas fa-venus-mars"></i>
+                      <span>Jenis:</span>
+                      <strong id="genderValue">-</strong>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Signature Premium -->
+                <div class="signature-premium" id="signatureArea">
+                  <div class="signature-line"></div>
+                  <div class="signature-content">
+                    <div class="signature-text">
+                      <p class="salam">Wassalamu'alaikum wr. wb.</p>
+                      <p class="quote-text">
+                        "Bersinar bukan hanya pemimpinnya, tapi juga seluruh
+                        anggotanya"
+                      </p>
+                    </div>
+                    <div class="signature-ttd">
+                      <div class="ttd-wrapper">
+                        <img
+                          src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 80'%3E%3Cpath d='M20,40 Q50,20 80,40 T140,40' stroke='%230b3b2f' fill='none' stroke-width='3'/%3E%3Ctext x='20' y='70' font-family='Arial' font-size='14' fill='%230b3b2f'%3EAgung Ubaidillah%3C/text%3E%3C/svg%3E"
+                          alt="ttd"
+                          class="ttd-image"
+                        />
+                        <div class="ttd-title">
+                          <strong>Agung Ubaidillah</strong>
+                          <span>Ketua Umum IRMANUFA</span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Footer Result -->
+              <div class="result-footer-premium" id="resultFooter">
+                <div class="footer-stats" id="footerStats">
+                  <i class="fas fa-chart-line"></i>
+                  <span
+                    >Total anggota terdaftar: <strong>90</strong> · Aktif: 56 ·
+                    Pasif: 34</span
+                  >
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Info Panel -->
+          <div class="info-panel">
+            <div class="info-item">
+              <i class="fas fa-check-circle"></i>
+              <span>Nomor tersedia: 24.01.001 - 24.01.090</span>
+            </div>
+            <div class="info-item">
+              <i class="fas fa-clock"></i>
+              <span>Masa Bakti 2024-2026</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Footer -->
+        <div class="footer-premium">
+          <p>© 2026 Ikatan Remaja Masjid Jami Nurul Falah · Desa Ujungjaya</p>
+          <p class="small">
+            Sistem Informasi Anggota v2.0 · Real-time Database
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Toast Notification -->
+    <div class="toast-notification" id="toast">
+      <i class="fas fa-info-circle"></i>
+      <span id="toastMessage">Selamat datang di IRMANUFA Premium</span>
+    </div>
+
+    <!-- Modal Preview (untuk fitur extra) -->
+    <div class="modal-preview" id="previewModal">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h3>Preview Anggota</h3>
+          <button class="modal-close">&times;</button>
+        </div>
+        <div class="modal-body" id="modalBody">
+          <!-- Konten akan diisi JS -->
+        </div>
+      </div>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
